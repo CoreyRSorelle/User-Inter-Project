@@ -29,7 +29,7 @@
                             <li><a href="#references" class="incomplete">References</a></li>
                             <li><a href="#education" id="educationNav" class="incomplete">Education</a></li>
                             <li><a href="#experience" id="workExNav" class="incomplete">Work Experience</a></li>
-                            <li><a href="#background" class="incomplete">Background</a></li>
+                            <li><a href="#background" id="backgroundNav" class="incomplete">Background</a></li>
                             <li><a href="#waiver" class="incomplete">Waiver</a></li>
                             <li><button type="submit" form="ourForm" class="btn btn-secondary" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;" disabled >Submit Application</button>
                         </ul>
@@ -843,7 +843,7 @@
                         </label>
                     </div>
                     <div class="col-md-4" style="padding-right: 5px;">
-                        <div class="form-floating" id="transport">
+                        <div class="form-floating" id="transportValid">
                             <select class="form-select" id="transport" name="transport"required>
                                 <option selected disabled=""> </option>
                                 <option value="Yes">Yes</option>
@@ -865,7 +865,7 @@
                         </label>
                     </div>
                     <div class="col-md-4" style="padding-right: 5px;">
-                        <div class="form-floating" id="driverL">
+                        <div class="form-floating" id="dlValid">
                             <select class="form-select" id="driverL" name="driverL"required>
                                 <option selected value disabled=""> </option>
                                 <option value="Yes">Yes</option>
@@ -886,25 +886,25 @@
                             <div class="col-md" style="text-align: left; margin-left: 5px;">
                                 <label for="exp" style="display: inline-block;">
                                     <span>
-                                        Expirationd Date
+                                        Expiration Date
                                     </span>
                                 </label>
                             </div>
                         <div class="col-md" style="padding-right: 5px;">
-                            <div class="form-floating">
+                            <div class="form-floating" id="expValid">
                                 <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px; display: inline-block;" id="exp" name="exp" value="2023-11-01">
                             </div>
                         </div>
                     </div>
                 </div>
                     <div class="col-md-3">
-                        <div class="form-floating mb-3" >
+                        <div class="form-floating mb-3" id="dlNumberValid" >
                             <input type="text" class="form-control" id="dlnum" placeholder="Full name" style="height: 72px;" required>
                             <label for="dlnum">Driver's License#:</label>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-floating mb-3" >
+                        <div class="form-floating mb-3" id="dlStateValid" >
                             <select class="form-select" id="dlstate" name="soi" style="height: 72px;">
 								<option selected value="" disabled>State</option>
 								<option value="AL">Alabama</option>
@@ -974,7 +974,7 @@
                             </label>
                         </div>
                         <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating" id="insured">
+                            <div class="form-floating" id="insuredValid">
                                 <select class="form-select" id="insured" name="insured"required>
                                     <option selected value disabled=""> </option>
                                     <option value="Yes">Yes</option>
@@ -996,8 +996,8 @@
                             </label>
                         </div>
                         <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating" id="driverL">
-                                <select class="form-select" id="driverL" name="driverL"required>
+                            <div class="form-floating" id="workUseValid">
+                                <select class="form-select" id="workUse" name="workUse"required>
                                     <option selected value disabled=""> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -1007,69 +1007,6 @@
                         </div>
                     </div>
                 </div><br>
-				<!--Start of row 3-->
-				<div class="row">
-
-					<!--Radio button group for Car question-->
-
-
-					<!--Radio button group for Car question 1-->
-					<div class="col-md-3">
-
-						<p>Do you have reliable transportation?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="transport" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="transport" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-				</div><!--End row 3-->
-
-				<!--Start of row 4-->
-				<div class="row">
-
-					<!--Radio button group for Car question 2-->
-					<div class="col-md-3">
-
-						<p>Would you be willing to use your vehicle for work purposes?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="workcar" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="workcar" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-					<!--Radio button group for insurance question-->
-					<div class="col-md-3">
-
-						<p>Are you currently insured?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="insured" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="insured" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-				</div><!--End row 4-->
 
                 <p id="waiver" class="jumpTo"></p>
                 <h2>Waiver</h2>

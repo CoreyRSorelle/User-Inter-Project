@@ -80,6 +80,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //end checks for Job Specifications info section
 
+	//Background validation
+	var transportValidBool = false;
+    checkSelection("transport", "transportValid", "transportValidBool", "change");
+	
+	var dlValidBool = false;
+    checkSelection("driverL", "dlValid", "dlValidBool", "change");
+	
+	var expValidBool = false;
+    checkInput("exp", "expValid", "expValidBool", "change");
+
+    var dlStateValidBool = false;
+    checkSelection("dlstate", "dlStateValid", "dlStateValidBool", "change");
+
+    var dlNumberValidBool = false;
+    checkInput("dlnum", "dlNumberValid", "dlNumberValidBool");
+
+    var insuredValidBool = false;
+    checkSelection("insured", "insuredValid", "insuredValidBool", "change");
+
+    var workUseValidBool = false;
+    checkSelection("workUse", "workUseValid", "workUseValidBool", "change");
+	//end background validation
 
 
 
@@ -494,6 +516,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 checkWorkEx();
                 let generalInfoComplete = false;
                 generalInfoComplete = checkGeneralInfo();
+				
+				let backgroundComplete = false; // implemented here 
+				backgroundComplete = checkBackground();
 
                 let JobSpecificationsComplete = false;
                 JobSpecificationsComplete = checkJobSpecifications();
@@ -517,6 +542,32 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             })
           })
+		  
+	function checkBackground(){
+        let background = document.getElementById("backgroundNav");
+		
+		console.log(transportValidBool, dlValidBool, expValidBool, dlNumberValidBool, dlStateValidBool, insuredValidBool, workUseValidBool);
+		
+        if(
+			
+			
+            window["transportValidBool"] & window["dlValidBool"] 
+			& window["expValidBool"] & window["dlNumberValidBool"]
+			& window["dlStateValidBool"] & window["insuredValidBool"]
+			& window["workUseValidBool"]
+            ){
+          
+           background.classList.remove('incomplete');
+           background.classList.add('complete');
+           return true;
+        }
+        else{
+			
+            background.classList.add('incomplete');
+            background.classList.remove('complete');
+            return false;
+        }
+    }
 
 
     function checkGeneralInfo(){
